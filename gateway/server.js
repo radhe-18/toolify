@@ -7,7 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Load .env correctly
-dotenv.config({ path: __dirname + "/.env" });
+dotenv.config();
+
 
 import express from "express";
 import cors from "cors";

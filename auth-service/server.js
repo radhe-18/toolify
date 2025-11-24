@@ -89,5 +89,5 @@ app.post("/api/auth/upload-profile-pic", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🔥 Auth service running on http://localhost:${PORT}`));
