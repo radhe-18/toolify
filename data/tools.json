@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "description": "General-purpose AI assistant for writing, coding, and brainstorming.",
+    "longDescription": "Chat-based AI model that helps with writing, coding, analysis, tutoring, and more.",
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "company": "OpenAI",
+    "url": "https://chat.openai.com/",
+    "tags": [
+      "chat",
+      "writing",
+      "code",
+      "productivity"
+    ],
+    "features": [
+      "Natural conversations",
+      "Code help",
+      "Creative writing"
+    ],
+    "alternatives": [
+      "claude",
+      "gemini"
+    ]
+  },
+  {
+    "slug": "claude",
+    "name": "Claude",
+    "description": "AI assistant oriented toward helpfulness and safety.",
+    "longDescription": "Strong general language model for analysis, Q&A, and ideation with long context.",
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "company": "Anthropic",
+    "url": "https://claude.ai/",
+    "tags": [
+      "chat",
+      "analysis",
+      "safety"
+    ],
+    "features": [
+      "Long documents",
+      "Safe by design"
+    ],
+    "alternatives": [
+      "chatgpt",
+      "gemini"
+    ]
+  },
+  {
+    "slug": "gemini",
+    "name": "Gemini",
+    "description": "Google's multimodal AI that understands text, images, and more.",
+    "longDescription": "Useful for search, content generation, and integrating with Google ecosystem.",
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "company": "Google",
+    "url": "https://gemini.google.com/",
+    "tags": [
+      "chat",
+      "multimodal"
+    ],
+    "features": [
+      "Image understanding",
+      "Google integration"
+    ],
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ]
+  },
+  {
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "description": "Text-to-image generation via Discord with artistic styles.",
+    "longDescription": "Generate high-quality, stylized images from text prompts in Discord channels.",
+    "category": "Image",
+    "pricing": "Paid",
+    "company": "Midjourney",
+    "url": "https://www.midjourney.com/",
+    "tags": [
+      "images",
+      "art",
+      "design"
+    ],
+    "features": [
+      "High quality images",
+      "Stylized results"
+    ],
+    "alternatives": [
+      "dalle",
+      "stable-diffusion"
+    ]
+  },
+  {
+    "slug": "dalle",
+    "name": "DALL\u00b7E",
+    "description": "Create and edit images from text prompts or uploaded pictures.",
+    "longDescription": "Powerful image generation and editing capabilities for creatives and marketers.",
+    "category": "Image",
+    "pricing": "Paid",
+    "company": "OpenAI",
+    "url": "https://openai.com/dall-e-3",
+    "tags": [
+      "images",
+      "design",
+      "marketing"
+    ],
+    "features": [
+      "Text-to-image",
+      "Image editing"
+    ],
+    "alternatives": [
+      "midjourney",
+      "stable-diffusion"
+    ]
+  },
+  {
+    "slug": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "description": "Open source image generation models and tools.",
+    "longDescription": "Run models locally or via services to generate and edit images.",
+    "category": "Image",
+    "pricing": "Free",
+    "company": "Stability AI / Community",
+    "url": "https://stability.ai/",
+    "tags": [
+      "open-source",
+      "images"
+    ],
+    "features": [
+      "Local inference",
+      "Extensible ecosystem"
+    ],
+    "alternatives": [
+      "midjourney",
+      "dalle"
+    ]
+  },
+  {
+    "slug": "notion-ai",
+    "name": "Notion AI",
+    "description": "AI in Notion for summarizing, drafting, and organizing docs.",
+    "longDescription": "Built into Notion to help write, summarize, and automate tasks in your workspace.",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "company": "Notion",
+    "url": "https://www.notion.so/product/ai",
+    "tags": [
+      "productivity",
+      "writing",
+      "docs"
+    ],
+    "features": [
+      "Summaries",
+      "Drafting in docs"
+    ],
+    "alternatives": [
+      "mem-ai"
+    ]
+  },
+  {
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "description": "AI pair programmer that suggests code in your editor.",
+    "longDescription": "Speeds up coding by suggesting entire functions and tests in real time.",
+    "category": "Code",
+    "pricing": "Paid",
+    "company": "GitHub",
+    "url": "https://github.com/features/copilot",
+    "tags": [
+      "code",
+      "developer"
+    ],
+    "features": [
+      "Autocompletion",
+      "Test generation"
+    ],
+    "alternatives": []
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "description": "Answer engine with citations for research and browsing.",
+    "longDescription": "Great for finding sources quickly with concise answers and references.",
+    "category": "Search",
+    "pricing": "Freemium",
+    "company": "Perplexity AI",
+    "url": "https://www.perplexity.ai/",
+    "tags": [
+      "search",
+      "research"
+    ],
+    "features": [
+      "Citations",
+      "Fast answers"
+    ],
+    "alternatives": []
+  }
+]
