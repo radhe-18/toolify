@@ -18,11 +18,11 @@ export default function ToolPage({ params }) {
     }
 
     const load = async ()=>{
-      const t = await fetch(`http://localhost:5000/api/tools/${params.slug}`, { cache: "no-store" }).then(r=>r.json());
+      const t = await fetch(`http://localhost:5002/api/tools/${params.slug}`, { cache: "no-store" }).then(r=>r.json());
       setTool(t);
-      const a = await fetch(`http://localhost:5000/api/tools/${params.slug}/alternatives`).then(r=>r.json());
+      const a = await fetch(`http://localhost:5002/api/tools/${params.slug}/alternatives`).then(r=>r.json());
       setAlts(a);
-      const f = await fetch("http://localhost:5000/api/tools-featured").then(r=>r.json());
+      const f = await fetch("http://localhost:5002/api/tools-featured").then(r=>r.json());
       setFeatured(f);
     };
     load();

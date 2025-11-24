@@ -104,6 +104,22 @@ app.get("/api/tools/:slug", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5002;
+
+// ---------------- ALTERNATIVE TOOLS ----------------
+app.get("/api/tools/:slug/alternatives", async (req, res) => {
+  try {
+    const tool = await Tool.findOne({ slug: req.params.slug });
+    if (!tool) return res.status(404).json({ message: "Tool not found" });
+    const alternatives = await Tool.find({
+      category: tool.category,
+      slug: { $ne: tool.slug }
+    }).limit(12);
+    res.json(alternatives);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
+  }
+});
+
 app.listen(PORT, () =>
   console.log(`🔥 Tools service running on http://localhost:${PORT}`)
 );
