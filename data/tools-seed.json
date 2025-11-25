@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Tool A",
+    "slug": "tool-a",
+    "description": "A useful AI tool",
+    "category": "AI",
+    "pricing": "Free",
+    "tags": [
+      "ai",
+      "nlp"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Tool B",
+    "slug": "tool-b",
+    "description": "Another tool",
+    "category": "Developer",
+    "pricing": "Paid",
+    "tags": [
+      "dev"
+    ],
+    "featured": false
+  }
+]

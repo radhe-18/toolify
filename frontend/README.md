@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-# ToolifyAI
-
-Instead of browsing multiple websites, you can compare tools in one place.
-
----
-
-## Toolify Microservices – Backend Package
-
-This project includes multiple microservices with a gateway layer:
-
-- **auth-service**
-- **tools-service**
-- **favorites-service**
-- **notifications-service**
-- **gateway**
-
-Each service runs independently.
-
----
-
-=======
 # AI Tools Directory (Next.js 14 + Tailwind)
 
 A clean, responsive directory of AI tools with search, categories, tags, filters, favorites (localStorage), dark mode, and SEO.
@@ -61,4 +39,3 @@ Open http://localhost:3000
 
 ## Env
 No env is required by default. All data is static.
->>>>>>> 8e02b3bf4a5a7aa752a0e7ebff068a4ce14d813d
