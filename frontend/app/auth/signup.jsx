@@ -11,7 +11,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5005/api/auth/register", form);
+      const res = await axios.post("http://localhost:5001/api/auth/register", form);
       console.log("its running")
       localStorage.setItem("token", res.data.token);
       setMsg("Signup successful! Please login.");

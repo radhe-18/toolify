@@ -31,7 +31,7 @@ export default function AuthPage() {
       console.log("its running");
 
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}${endpoint}`,
+        `http://localhost:5001${endpoint}`,
         payload
       );
 
