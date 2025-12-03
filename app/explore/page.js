@@ -24,9 +24,9 @@ export default function Explore() {
     }
     setUser(true);
 
-    fetch("http://localhost:5005/api/tools?limit=500")
+    fetch("http://localhost:5002/api/tools")
       .then((r) => r.json())
-      .then((d) => setTools(d.items || d))
+      .then((d) => setTools(d.items))
       .catch(console.error);
   }, [router]);
 
