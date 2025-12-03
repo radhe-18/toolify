@@ -1,0 +1,20 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function ThemeProvider({ children }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    // initialize theme
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  if (!mounted) return <>{children}</>;
+
+  return <>{children}</>;
+}

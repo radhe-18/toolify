@@ -21,19 +21,15 @@ export default function AuthPage() {
     e.preventDefault();
     try {
       const endpoint =
-        activeTab === "login" ? "/api/auth/login" : "/api/auth/register";
-
+      activeTab === "login" ? "/api/auth/login" : "/api/auth/register";
+      
       const payload =
-        activeTab === "login"
-          ? { email: form.email, password: form.password }
-          : form;
-
-      console.log("its running");
-
-      const res = await axios.post(
-        `http://localhost:5001${endpoint}`,
-        payload
-      );
+      activeTab === "login"
+      ? { email: form.email, password: form.password }
+      : form;
+      
+      console.log("its running")
+      const res = await axios.post(`http://localhost:5005${endpoint}`, payload);
 
       localStorage.setItem("token", res.data.token);
       setMsg(`${activeTab === "login" ? "Login" : "Signup"} successful!`);
@@ -43,8 +39,6 @@ export default function AuthPage() {
       setMsg(err.response?.data?.message || `${activeTab} failed`);
     }
   };
-
-
 
   return (
     <div className="min-h-screen 
@@ -305,4 +299,3 @@ export default function AuthPage() {
     </div>
   );
 }
-

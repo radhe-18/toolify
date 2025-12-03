@@ -1,4 +1,28 @@
+<<<<<<< HEAD
 node_modules/
 dist/
 build/
 .env
+=======
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+>>>>>>> 8e02b3bf4a5a7aa752a0e7ebff068a4ce14d813d
