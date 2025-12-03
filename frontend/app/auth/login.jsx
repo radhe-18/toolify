@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
    const res = await axios.post(
-  `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
+  `https://toolify-2vy7.onrender.com/api/auth/login`,
   form
 );
 
