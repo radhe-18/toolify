@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import ToolCard from "@/components/ToolCard";
+const API = process.env.NEXT_PUBLIC_API_URL || "https://toolify-1-gateway.onrender.com";
 
 export default function Home() {
   const [q, setQ] = useState("");
@@ -8,12 +9,14 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5005/api/tools?limit=500")
+    fetch(`${API}/api/tools?limit=500`)
+
       .then((r) => r.json())
       .then((d) => setTools(d.items || d))
       .catch(console.error);
 
-    fetch("http://localhost:5005/api/tools-featured")
+    fetch(`${API}/api/tools-featured`)
+
       .then((r) => r.json())
       .then(setFeatured)
       .catch(console.error);

@@ -21,7 +21,7 @@ export default function Profile() {
   const fetchProfile = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5001/api/auth/profile", {
+      const res = await axios.get(fetch(`${API}/api/tools`), {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(res.data);
@@ -42,7 +42,7 @@ export default function Profile() {
     reader.onload = async () => {
       try {
         const token = localStorage.getItem("token");
-        await axios.post("http://localhost:5001/api/auth/upload-profile-pic", {
+        await axios.post(`${API}/api/auth/upload-profile-pic`, {
           profilePic: reader.result
         }, {
           headers: { Authorization: `Bearer ${token}` }
@@ -62,7 +62,7 @@ export default function Profile() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put("http://localhost:5001/api/auth/profile", form, {
+      const res = await axios.put(`${API}/api/auth/profile`, form, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(res.data);

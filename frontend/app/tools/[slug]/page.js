@@ -18,13 +18,21 @@ export default function ToolPage({ params }) {
     }
 
     const load = async ()=>{
-      const t = await fetch(`http://localhost:5002/api/tools/${params.slug}`, { cache: "no-store" }).then(r=>r.json());
-      setTool(t);
-      const a = await fetch(`http://localhost:5002/api/tools/${params.slug}/alternatives`).then(r=>r.json());
-      setAlts(a);
-      const f = await fetch("http://localhost:5002/api/tools-featured").then(r=>r.json());
-      setFeatured(f);
-    };
+     const t = await fetch(`${API}/api/tools/${params.slug}`, {
+          cache: "no-store",
+        }).then((r) => r.json());
+        setTool(t);
+
+        // 🔥 Alternatives
+        const a = await fetch(`${API}/api/tools/${params.slug}/alternatives`).then(
+          (r) => r.json()
+        );
+        setAlts(a);
+
+        // 🔥 Featured Tools
+        const f = await fetch(`${API}/api/tools-featured`).then((r) => r.json());
+        setFeatured(f);
+      } 
     load();
   }, [params.slug, router]);
 

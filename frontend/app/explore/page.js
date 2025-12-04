@@ -1,3 +1,4 @@
+
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
@@ -24,7 +25,8 @@ export default function Explore() {
     }
     setUser(true);
 
-    fetch("http://localhost:5002/api/tools")
+   fetch(`${API}/api/tools`)
+
       .then((r) => r.json())
       .then((d) => setTools(d.items))
       .catch(console.error);
