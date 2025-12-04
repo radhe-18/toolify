@@ -11,7 +11,10 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://toolify-2vy7.onrender.com/api/auth/register", form);
+      const res = await axios.post(
+  "https://toolify-1-gateway.onrender.com/api/auth/register",
+  form
+);
       console.log("its running")
       localStorage.setItem("token", res.data.token);
       setMsg("Signup successful! Please login.");

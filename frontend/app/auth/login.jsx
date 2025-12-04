@@ -11,8 +11,8 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-   const res = await axios.post(
-  `https://toolify-2vy7.onrender.com/api/auth/login`,
+  const res = await axios.post(
+  "https://toolify-1-gateway.onrender.com/api/auth/login",
   form
 );
 
