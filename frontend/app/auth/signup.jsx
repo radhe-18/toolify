@@ -1,9 +1,19 @@
+const API = process.env.NEXT_PUBLIC_API_URL;
+
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
 
 export default function Signup() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phone: "",
+    address: "",
+    city: "",
+    country: "",
+  });
   const [msg, setMsg] = useState("");
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -12,9 +22,9 @@ export default function Signup() {
     e.preventDefault();
     try {
       const res = await axios.post(
-  "https://toolify-1-gateway.onrender.com/api/auth/register",
-  form
-);
+        `${API}/api/auth/register`,  
+        form
+      );
       console.log("its running")
       localStorage.setItem("token", res.data.token);
       setMsg("Signup successful! Please login.");

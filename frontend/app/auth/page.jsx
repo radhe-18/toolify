@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
@@ -28,12 +29,9 @@ export default function AuthPage() {
           ? { email: form.email, password: form.password }
           : form;
 
-      console.log("its running");
+       console.log("sending request to:", `${API}${endpoint}`);
 
-      const res = await axios.post(
-        `http://localhost:5001${endpoint}`,
-        payload
-      );
+const res = await axios.post(`${API}${endpoint}`, payload);
 
       localStorage.setItem("token", res.data.token);
       setMsg(`${activeTab === "login" ? "Login" : "Signup"} successful!`);

@@ -18,7 +18,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT;
+
 
 // ------------------ AUTH ------------------
 app.use(
@@ -26,16 +27,18 @@ app.use(
   createProxyMiddleware({
     target: process.env.AUTH_URL,
     changeOrigin: true,
-    onProxyReq: (proxyReq, req, res) => {
+    pathRewrite: { "^/api/auth": "" }, // 👈 IMPORTANT
+    onProxyReq: (proxyReq, req) => {
       if (req.body && Object.keys(req.body).length > 0) {
         const bodyData = JSON.stringify(req.body);
-        proxyReq.setHeader('Content-Type', 'application/json');
-        proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+        proxyReq.setHeader("Content-Type", "application/json");
+        proxyReq.setHeader("Content-Length", Buffer.byteLength(bodyData));
         proxyReq.write(bodyData);
       }
     },
   })
 );
+
 
 // ------------------ AUTH HEALTH ------------------
 app.use(
