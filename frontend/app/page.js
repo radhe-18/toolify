@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import ToolCard from "@/components/ToolCard";
+import axios from "axios";
 const API = process.env.NEXT_PUBLIC_API_URL || "https://toolify-1-gateway.onrender.com";
 
 export default function Home() {
@@ -9,10 +10,22 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    fetch(`https://toolify-1-gateway.onrender.com/api/tools?limit=500`).then((r) => r.json())
-      .then((d) => {setTools(d.items || d); console.log(d,"mydata")})
+    const fetchTools = async()=>{
+      try {
+        const res = await axios.get(`${API}/api/tools?limit=500`);
+        setTools(res.data.items || res.data);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    // fetch(`${API}/api/tools?limit=500`)
+
+    //   .then((r) => r.json())
+    //   .then((d) => {setTools(d.items || d); console.log(d,"mydata")})
     
-      .catch(console.error);
+    //   .catch(console.error);
+
+    fetchTools();
 
     fetch(`${API}/api/tools-featured`)
 
