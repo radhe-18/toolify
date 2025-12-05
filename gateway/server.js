@@ -47,22 +47,55 @@ app.use(
     target: process.env.AUTH_URL,
     changeOrigin: true,
   })
-);
+);  
 
 // ------------------ TOOLS ------------------
-app.use(
-  "/api/tools",
-  createProxyMiddleware({
-    target: process.env.TOOLS_URL,
-    changeOrigin: true,
-  })
-);
+// app.use(
+//   "/api/tools",
+//   createProxyMiddleware({
+//     target: process.env.TOOLS_URL,
+//     changeOrigin: true,
+//   })
+// );
+
+// app.use(
+//   "/api/tools-featured",
+//   createProxyMiddleware({
+//     target: process.env.TOOLS_URL,
+//     changeOrigin: true,
+//   })
+// );
+
+// ------------------ TOOLS (MAIN LIST, SEARCH, PAGINATION) ------------------
 
 app.use(
   "/api/tools-featured",
   createProxyMiddleware({
     target: process.env.TOOLS_URL,
     changeOrigin: true,
+    pathRewrite: { "^/api/tools-featured": "/api/tools-featured" },
+  })
+);
+
+
+// ------------------ SINGLE TOOL & ALTERNATIVES ------------------
+app.use(
+  "/api/tools",
+  createProxyMiddleware({
+    target: process.env.TOOLS_URL,
+    changeOrigin: true,
+    pathRewrite: { "^/api/tools": "/api/tools" },
+  })
+);
+
+
+// ------------------ ALL TOOLS (last route!) ------------------
+app.use(
+  "/api/tools",
+  createProxyMiddleware({
+    target: process.env.TOOLS_URL,
+    changeOrigin: true,
+    pathRewrite: { "^/api/tools": "/api/tools" },
   })
 );
 

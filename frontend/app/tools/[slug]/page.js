@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { ExternalLink, Star } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+const API = process.env.NEXT_PUBLIC_API_URL;
+
 
 export default function ToolPage({ params }) {
   const [tool, setTool] = useState(null);

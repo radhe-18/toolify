@@ -12,7 +12,8 @@ export default function Home() {
     fetch(`${API}/api/tools?limit=500`)
 
       .then((r) => r.json())
-      .then((d) => setTools(d.items || d))
+      .then((d) => {setTools(d.items || d); console.log(d,"mydata")})
+    
       .catch(console.error);
 
     fetch(`${API}/api/tools-featured`)
