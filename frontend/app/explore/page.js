@@ -4,6 +4,9 @@ import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import ToolCard from "@/components/ToolCard";
 import Filters from "@/components/Filters";
+const API = process.env.NEXT_PUBLIC_API_URL;
+
+
 
 export default function Explore() {
   const router = useRouter();

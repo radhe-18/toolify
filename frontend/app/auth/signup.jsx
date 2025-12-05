@@ -1,8 +1,9 @@
-const API = process.env.NEXT_PUBLIC_API_URL;
 
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+const API = process.env.NEXT_PUBLIC_API_URL;
+
 
 export default function Signup() {
   const [form, setForm] = useState({
