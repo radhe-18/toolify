@@ -9,9 +9,7 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    fetch(`${API}/api/tools?limit=500`)
-
-      .then((r) => r.json())
+    fetch(`https://toolify-1-gateway.onrender.com/api/tools?limit=500`).then((r) => r.json())
       .then((d) => {setTools(d.items || d); console.log(d,"mydata")})
     
       .catch(console.error);
